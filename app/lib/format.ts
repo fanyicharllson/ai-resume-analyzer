@@ -24,3 +24,5 @@ export function formatSize(bytes: number): string {
   // Format the result: round to 2 decimal places and remove trailing zeros
   return `${value.toFixed(2).replace(/\.0+$|(\.\d*[1-9])0+$/, '$1')} ${units[finalUnitIndex]}`;
 }
+
+export const generateUUID = () => crypto.randomUUID();
