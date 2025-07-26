@@ -47,7 +47,7 @@ const Upload = () => {
             resumePath: uploadedFile.path,
             imagePath: uploadedImage.path,
             companyName, jobTitle, jobDescription,
-            feeback: '',
+            feedback: '',
         }
 
         await  kv.set(`resume:${uuid}`, JSON.stringify(data));
@@ -62,10 +62,12 @@ const Upload = () => {
 
         const feedbackText = typeof  feedBack.message.content === 'string' ? feedBack.message.content : feedBack.message.content[0].text;
 
-        data.feeback = JSON.parse(feedbackText);
+        data.feedback = JSON.parse(feedbackText);
         await kv.set(`resume:${uuid}`, JSON.stringify(data));
-       setStatusText("Analysis complete, redirecting...");
-       console.log(data)
+        setStatusText("Analysis complete, redirecting...");
+        console.log(data)
+
+        navigate(`/resume/${uuid}`);
     }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
