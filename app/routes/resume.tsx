@@ -87,7 +87,7 @@ const Resume = () => {
                         </>
                     ) : (
                         <>
-                            <img src="/images/resume-scan.gif" alt="scan" className="w-full"/>
+                            <img src="/images/resume-scan-2.gif" alt="scan" className="w-full" />
                         </>
                     )}
                 </section>
